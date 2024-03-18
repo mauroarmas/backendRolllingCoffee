@@ -1,6 +1,6 @@
 import express from 'express'
 
-console.log("Hola mundo")
+console.log("Hola mundo desde el backend")
 
 //1° Configurar un puerto
 
