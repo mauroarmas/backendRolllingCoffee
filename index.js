@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import 'dotenv/config'; //permite procesar variables de entorno
 import path from "path"
 import { fileURLToPath } from 'url';
+import routerProductos from './src/routes/productos.routes.js';
 
 console.log("Hola mundo desde el backend")
 
@@ -34,7 +35,4 @@ app.use(express.static(__publicname)) //se carga en la raíz del servidor (ruta 
 
 //3° Configuracion de las rutas 
 
-app.get("/nuevo", (req, res)=>{
-    console.log("Hola mundo desde el paso 3");
-    res.send("Desde el backend de rolling coffe usando res")
-})
+app.use("/api", routerProductos)
