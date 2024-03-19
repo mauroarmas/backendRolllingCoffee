@@ -5,6 +5,7 @@ import 'dotenv/config'; //permite procesar variables de entorno
 import path from "path"
 import { fileURLToPath } from 'url';
 import routerProductos from './src/routes/productos.routes.js';
+import './src/database/database.js'
 
 console.log("Hola mundo desde el backend")
 
