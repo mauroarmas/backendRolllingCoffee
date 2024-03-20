@@ -7,5 +7,5 @@ mongoose.connect(mongoURI)
 
 const datosConexion = mongoose.connection;
 datosConexion.once('open', ()=>{
-    console.log("Conectado a la base de datos")
+    console.info("Conectado a la base de datos")
 })
