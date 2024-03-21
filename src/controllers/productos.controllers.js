@@ -43,3 +43,42 @@ export const agregarProducto = async (req, res) => {
     });
   }
 };
+
+export const listarProductoPorId = async (req, res) => {
+  try{
+    //extraer producto id
+    console.log(req.params)
+
+    //buscar el producto en la BD
+    const productoEncontrado = await Producto.findById(req.params.id)
+
+    //responder con el producto
+    res.status(200).json(productoEncontrado)
+
+  }catch(error){
+    console.error(error)
+    res.status(400).json({
+      mensage: "El producto no se encontro",
+    });
+  }
+}
+
+export const listarProductosPorInfusion = async (req, res) => {
+  try{
+    //extraer producto id
+    console.log(req.params)
+
+    //buscar el producto en la BD
+    const productosEncontrados = await Producto.find({categoria: "Infusión"})
+    //const productoEncontrado = await Producto.findById(req.params)
+
+    //responder con el producto
+    res.status(200).json(productosEncontrados)
+
+  }catch(error){
+    console.error(error)
+    res.status(404).json({
+      mensage: "El producto no se encontro",
+    });
+  }
+}
